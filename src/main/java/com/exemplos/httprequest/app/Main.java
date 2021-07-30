@@ -19,6 +19,7 @@ import com.exemplos.httprequest.entity.User;
 import com.google.gson.Gson;
 
 public class Main {
+	private static HttpClient client = HttpClientBuilder.create().build();
 
 	public static void main(String[] args) {
 		try {
@@ -33,7 +34,6 @@ public class Main {
 	}
 	
 	private static void httpGet() throws Exception {
-		HttpClient client = HttpClientBuilder.create().build();
 		HttpGet request = new HttpGet("https://httpbin.org/get");
 		
 		request.setHeader("Content-type", "application/json");
@@ -46,7 +46,6 @@ public class Main {
 	}
 
 	private static void httpPost() throws Exception {
-		HttpClient client = HttpClientBuilder.create().build();
 		HttpPost request = new HttpPost("https://httpbin.org/post");
 		Gson gson = new Gson();
 		
@@ -66,7 +65,6 @@ public class Main {
 	}
 
 	private static void httpPut() throws Exception {
-		HttpClient client = HttpClientBuilder.create().build();
 		HttpPut request = new HttpPut("https://httpbin.org/put");
 		Gson gson = new Gson();
 		
@@ -86,7 +84,6 @@ public class Main {
 	}
 
 	private static void httpDelete() throws Exception {
-		HttpClient client = HttpClientBuilder.create().build();
 		HttpDelete request = new HttpDelete("https://httpbin.org/delete");
 		
 		request.setHeader("Content-type", "application/json");		
